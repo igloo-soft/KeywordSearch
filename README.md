@@ -9,6 +9,7 @@ Search result in milliseconds, fast enough for auto suggestion while the user is
 Useful for searching e.g. enums by CamelCaseName, UI controls by caption text, objects by custom tags etc.
 
 NuGet: https://www.nuget.org/packages/KeywordSearch
+GitHub: https://github.com/igloo-soft/KeywordSearch
 
 ```csharp
 var index = new KeywordSearch<KnownColor>();
