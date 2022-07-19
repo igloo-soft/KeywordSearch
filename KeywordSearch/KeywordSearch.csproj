@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net461;netstandard2.0;netstandard2.1</TargetFrameworks>
+	<LangVersion>latest</LangVersion>
+	<Nullable>enable</Nullable>
+	<PackageId>KeywordSearch</PackageId>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Company>Igloosoft</Company>
+	<Authors>igloosoft</Authors>
+	<Version>3.0.0</Version>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageTags>keyword;search;index</PackageTags>
+	<Description>KeywordSearch is a minimalist keyword indexer searcher that associates generic objects (e.g. enum or UserControl) with multiple keywords (e.g. tokenized CamelCaseEnumName, caption text, custom tags etc.). 
+
+Designed for interactive search while the user is typing. Tiny memory footprint comparing to a full text search engine. </Description>
+	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<Copyright>Copyright (c) 2022 Igloosoft</Copyright>
+  </PropertyGroup>
+
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>$(AssemblyName).UnitTests</_Parameter1>
+			<!-- We use the value of AssemblyName to declare the value of the attribute -->
+		</AssemblyAttribute>
+	</ItemGroup>
+	
+	<ItemGroup>
+	<PackageReference Include="Nullable" Version="1.3.0">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
