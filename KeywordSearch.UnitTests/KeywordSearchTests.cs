@@ -11,9 +11,18 @@ namespace KeywordSearch.UnitTests
 		public void Example()
 		{
 			var index = new KeywordSearch<KnownColor>();
-			index.AddPhrases(Enum.GetValues<KnownColor>().Select(color => (color, color.ToString())));
+
+			// Map each KnownColor to its name: E.g. LightGoldenrodYellow
+			var phrases = Enum.GetValues<KnownColor>()
+				.Select(color => (Item: color, Phrase: color.ToString()));
+
+			// By default, CamelCase phrases are tokenized into keywords.
+			index.AddPhrases(phrases);
+
+			// Search for "gol"
+			// result = { Gold, Goldenrod, DarkGoldenrod, LightGoldenrodYellow, PaleGoldenrod }
 			var result = index.Search("gol");
-			// result: { Gold, Goldenrod, DarkGoldenrod, LightGoldenrodYellow, PaleGoldenrod }
+
 
 			var expected = new KnownColor[]
 			{
